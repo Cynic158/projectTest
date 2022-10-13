@@ -1,0 +1,28 @@
+a {
+  transition: none !important;
+}
+.userinfo {
+  height: 60px;
+  line-height: 60px;
+  padding-left: 30px;
+}
+.textAvatar {
+  display: inline-block;
+  background-color: rgb(0, 150, 136);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  margin-right: 10px;
+  font-size: 16px;
+  user-select: none;
+}
+.welcome {
+  margin-right: 10px;
+}
+.layui-nav-img {
+  display: none;
+  width: 40px;
+  height: 40px;
+}

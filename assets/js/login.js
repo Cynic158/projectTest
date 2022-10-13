@@ -107,9 +107,4 @@ $(function () {
       },
     });
   });
-
-  // baseApi——ajaxPrefilter,url根路径拼接
-  $.ajaxPrefilter(function (options) {
-    options.url = "http://www.liulongbin.top:3007" + options.url;
-  });
 });
