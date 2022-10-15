@@ -10,3 +10,18 @@ $.ajaxPrefilter(function (options) {
     }
   };
 });
+// 获取用户基本信息
+function getinfo(fun) {
+  // 获取用户基本信息
+  $.ajax({
+    type: "get",
+    url: "/my/userinfo",
+    success: function (res) {
+      if (res.status !== 0) {
+        return layer.msg(res.message);
+      } else {
+        fun(res.data);
+      }
+    },
+  });
+}

@@ -1,6 +1,6 @@
 $(function () {
   // 获取用户基本信息
-  getinfo();
+  getinfo(renderinfo);
   // 登出事件
   $("#logoutbtn").click(function () {
     layer.confirm(
@@ -17,22 +17,6 @@ $(function () {
   });
 });
 
-// 获取用户基本信息
-function getinfo() {
-  // 获取用户基本信息
-  $.ajax({
-    type: "get",
-    url: "/my/userinfo",
-    success: function (res) {
-      if (res.status !== 0) {
-        return layer.msg(res.message);
-      } else {
-        renderinfo(res.data);
-      }
-    },
-  });
-}
-
 // 渲染用户信息
 function renderinfo(user) {
   if (user.user_pic == null) {
@@ -45,4 +29,9 @@ function renderinfo(user) {
     $(".textAvatar").css("display", "none");
   }
   $(".username").text(user.nickname || user.username);
+}
+
+// 由子页面调用刷新
+function refreshinfo() {
+  getinfo(renderinfo);
 }
