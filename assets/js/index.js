@@ -19,7 +19,8 @@ $(function () {
 
 // 渲染用户信息
 function renderinfo(user) {
-  if (user.user_pic == null) {
+  // if (user.user_pic == null) {
+  if (user.pic == null) {
     $(".textAvatar").text((user.nickname || user.username)[0].toUpperCase());
     $(".layui-nav-img").css("display", "none");
     $(".textAvatar").css("display", "inline-block");
